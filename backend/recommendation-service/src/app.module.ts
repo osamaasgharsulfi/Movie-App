@@ -4,12 +4,14 @@ import { AppService } from './app.service';
 import { RecommendationModule } from './recommendation/recommendation.module';
 import { ConfigModule } from '@nestjs/config';
 import { PrismaModule } from './prisma/prisma.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
     RecommendationModule,
     ConfigModule.forRoot({ isGlobal: true }),
     PrismaModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
