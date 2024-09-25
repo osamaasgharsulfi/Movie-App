@@ -23,26 +23,27 @@ export class MoviesService {
     }
   }
 
-  async getMoviesByCategoryId(categoryId: number) {
+  async getMovieById(movieId: number) {
     try {
-      const data = await this.prisma.movie.findMany({
-        where: { categoryId },
+      const data = await this.prisma.movie.findUnique({
+        where: { id: movieId }, 
         include: {
-          category: true, // Include category information if needed
+          category: true, 
         },
       });
-
-      if (data.length > 0) {
+  
+      if (data) {
         return { statusCode: 1, message: 'success', data };
       } else {
         return {
           statusCode: 1,
-          message: 'No movies found for this category',
-          data: [],
+          message: 'Movie not found',
+          data: null,
         };
       }
     } catch (error) {
       return { statusCode: 0, message: 'Error Occurred', error: error.message };
     }
   }
+  
 }

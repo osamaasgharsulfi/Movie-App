@@ -13,8 +13,8 @@ Welcome to the Movie App! This project is designed to provide a platform for use
 
 - **Backend**: NestJS
 - **Database**: PostgreSQL (with Prisma ORM)
-- **Authentication**: JWT (JSON Web Tokens)
-- **Frontend**: (Working on it)
+- **Authentication**: JWT (JSON Web Tokens) using Guards
+- **Frontend**: Next JS
 
 ## Prerequisites
 

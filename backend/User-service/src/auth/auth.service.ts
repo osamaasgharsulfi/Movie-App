@@ -25,10 +25,10 @@ export class AuthService {
           dob: dto.dob,
           address: dto.address,
           image: dto.image,
-          categories: {
-            connect: dto.categoryIds.map((id) => ({ id })),
-          },
-          categoryIds: dto.categoryIds,
+          // categories: {
+          //   connect: dto.categoryIds.map((id) => ({ id })),
+          // },
+          // categoryIds: dto.categoryIds,
           //   ratings: dto.ratings
         },
       });
@@ -63,7 +63,7 @@ export class AuthService {
 
     const payload = { id: user.id, email: user.email };
     const token = await this.jwt.signAsync(payload, {
-      expiresIn: '15m',
+      expiresIn: '60m',
       secret: this.config.get('JWT_SECRET'),
     });
 

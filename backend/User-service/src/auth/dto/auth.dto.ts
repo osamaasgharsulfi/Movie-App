@@ -36,9 +36,9 @@ export class AuthDto {
   @IsNotEmpty()
   dob?: Date;
 
-  @IsArray()
-  @IsInt({ each: true })
-  @IsNotEmpty()
-  @ArrayUnique()
-  categoryIds: number[];
+  // @IsArray()
+  // @IsInt({ each: true })
+  // @IsNotEmpty()
+  // @ArrayUnique()
+  // categoryIds: number[];
 }
